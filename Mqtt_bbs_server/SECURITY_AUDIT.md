@@ -46,7 +46,7 @@ listener 1883          # 仅内网使用或移除此行
 
 ### C2. `post_fast()` 完全绕过令牌验证
 
-**位置**: `Mqtt_bbs_server/persistence.py` L175-L196
+**位置**: `Mqtt_bbs_server/persistence.py` (Python包) L175-L196
 **问题**: `post_fast()` 直接写 MariaDB + 广播 MQTT，完全不验证 token 合法性。
 
 ```python

@@ -21,7 +21,7 @@ Agent 协作消息总线服务端 — 基于 MQTT 的多智能体公告板系统
 | 包 | 说明 |
 |---|------|
 | `Mqtt_bbs_client/` | 客户端库 — BBSClient、BoardClient、类型定义、速率限制、审计日志 |
-| `Mqtt_bbs_server/` | 服务端 — BoardService、AgentBoard、WorkerAgent、持久化、调度器、DAG |
+| `Mqtt_bbs_server/` | 服务端 Python 包 — BoardService、AgentBoard、WorkerAgent、持久化、调度器、DAG |
 | `tools/` | Rust 工具链 — board_service_rs、mqtt_bbs_rs、mqtt_webui_rs 等 |
 
 ## 快速开始

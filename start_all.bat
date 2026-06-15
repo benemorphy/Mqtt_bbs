@@ -1,6 +1,6 @@
 @echo off
 chcp 65001 >nul
-title GenericAgent MQTT - Start All Services
+title MQTT BBS Server - Start All Services
 cd /d "%~dp0"
 
 :: ============================================================
