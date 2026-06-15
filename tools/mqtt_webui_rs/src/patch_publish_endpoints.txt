@@ -1,0 +1,14 @@
+// 追加到 main.rs 的 handle() 函数中，替换已有的 match path 块
+// 新增 POST 端点用于 agent/task 操作
+match (path, method) {
+    ("/", _) | ("", _) => send_html(&mut s),
+    "/events" => handle_sse(&mut s, state),
+    "/api/agents" if method == "GET" => send_json(&mut s, &serde_json::to_string(&state.lock().unwrap().agents).unwrap_or_default()),
+    "/api/tasks" if method == "GET" => send_json(&mut s, &serde_json::to_string(&state.lock().unwrap().tasks).unwrap_or_default()),
+    "/api/broker" if method == "GET" => send_json(&mut s, &serde_json::to_string(&state.lock().unwrap().stats).unwrap_or_default()),
+    "/api/agents/inject" if method == "POST" => handle_inject(&mut s),
+    "/api/tasks/cancel" if method == "POST" => handle_cancel(&mut s),
+    "/api/tasks/publish" if method == "POST" => handle_publish(&mut s),
+    path if path.starts_with("/api/") => send_json(&mut s, "{\"error\":\"not found\"}"),
+    _ => send_html(&mut s),
+}

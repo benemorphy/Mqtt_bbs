@@ -1,0 +1,31 @@
+[package]
+name = "board_service_rs"
+version = "0.1.0"
+edition = "2021"
+description = "Rust BoardService — MQTT 公告板持久化服务"
+
+[dependencies]
+mqtt_bbs_rs = { path = "../mqtt_bbs_rs" }
+rumqttc = "0.25"
+tokio = { version = "1", features = [
+    "rt-multi-thread", "macros", "sync", "time", "process", "signal", "net"
+] }
+sqlx = { version = "0.8", features = [
+    "runtime-tokio", "mysql", "chrono", "json"
+] }
+ureq = { version = "2", features = ["json"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+uuid = { version = "1", features = ["v4"] }
+chrono = { version = "0.4", features = ["serde"] }
+base64 = "0.22"
+hmac = "0.12"
+sha2 = "0.10"
+hex = "0.4"
+jsonwebtoken = { version = "9", default-features = false }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+anyhow = "1"
+thiserror = "2"
+clap = { version = "4", features = ["derive", "env"] }
+regex = "1"

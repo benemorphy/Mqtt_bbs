@@ -1,0 +1,5 @@
+[target.x86_64-pc-windows-gnu]
+# 使用gcc作为linker而不是dlltool
+linker = "gcc"
+# 这告诉rustc不要使用dlltool
+rustflags = ["-C", "link-args=-Wl,--no-leading-underscore"]

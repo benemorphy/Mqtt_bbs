@@ -1,0 +1,13 @@
+[package]
+name = "rmqtt_auth_rs"
+version = "0.1.0"
+edition = "2021"
+description = "RMQTT HTTP Auth service — validates MQTT credentials against MariaDB bbs_users"
+
+[dependencies]
+ureq = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+jsonwebtoken = "9"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }

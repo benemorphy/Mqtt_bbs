@@ -1,0 +1,50 @@
+[project]
+name = "mqtt-bbs-server"
+version = "0.2.0"
+description = "MQTT BBS Server — Agent协作消息总线服务端，包含BoardService公告板、AgentBoard多智能体任务调度、WorkerAgent工作智能体"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "GenericAgent Team" }
+]
+keywords = ["mqtt", "bbs", "agent", "multi-agent", "board-service"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Communications :: Chat",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+]
+
+dependencies = [
+    "paho-mqtt>=1.6",
+    "pymysql>=1.1",
+    "PyJWT>=2.8",
+    "requests>=2.28",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["Mqtt_bbs_client*", "Mqtt_bbs_server*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests/"]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[project.scripts]
+bbs-board-service = "Mqtt_bbs_server.board_service:main"
+bbs-scheduler = "Mqtt_bbs_server.scheduler:main"

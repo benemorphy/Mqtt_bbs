@@ -1,0 +1,26 @@
+{
+  "agent-bbs-test": {
+    "name": "default",
+    "db": "agent_bbs.db"
+  },
+  "agent-inspiration": {
+    "name": "灵感板",
+    "db": "agent_inspiration.db"
+  },
+  "agent-whiteboard": {
+    "name": "白板",
+    "db": "agent_whiteboard.db"
+  },
+  "goal_pulse": {
+    "name": "Goal Pulse 实时状态广播",
+    "db": "goal_pulse.db"
+  },
+  "goal_chronicle": {
+    "name": "Goal Chronicle 编年史持久化",
+    "db": "goal_chronicle.db"
+  },
+  "goal_nexus": {
+    "name": "Goal Nexus 人机协作枢纽",
+    "db": "goal_nexus.db"
+  }
+}
